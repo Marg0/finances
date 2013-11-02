@@ -1,0 +1,3 @@
+create table `category`(`id` mediumint not null auto_increment, `name` varchar(255) not null, primary key (`id`));
+create table `income` (`id` mediumint not null auto_increment, `name` varchar(255) not null, `timestamp` datetime not null, `category_id` mediumint, primary key(`id`), foreign key (`category_id`) references `finances`.`category`(`id`));
+create table `expense` (`id` mediumint not null auto_increment, `name` varchar(255) not null, `timestamp` datetime not null, `category_id` mediumint, primary key(`id`), foreign key (`category_id`) references `finances`.`category`(`id`));
